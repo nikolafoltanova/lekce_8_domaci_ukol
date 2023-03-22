@@ -40,7 +40,9 @@ let createEvent = (eventName, count, catering) => {
 }
 // createEvent('JS', 5, yourMama)
 
-// ukol 2
+// ukol 2 - funguje jen localně, nepodařilo se udělat - zkopírováno řešení a zjištěno co si musím rozjet aby to fungovalo
+// musi se přidat type="module" do <script> v html
+
 let viditelneCislo = 1
 const kostka = document.querySelector('.dice')
 const pootocKostkou = () => {
@@ -51,4 +53,6 @@ const pootocKostkou = () => {
 	kostka.src = `img/side${viditelneCislo}.svg`
 }
 document.addEventListener('keydown', pootocKostkou)
+
+// ukol 3
 
