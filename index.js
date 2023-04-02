@@ -1,4 +1,4 @@
-// ukol 1
+/* ukol 1
 let justFood = (count) => {
     if (count === 1) {
         return `catering od Just Food pro ${count} člověka za ${count * 125} Kč`
@@ -46,12 +46,33 @@ let createEvent = (eventName, count, catering) => {
 let viditelneCislo = 1
 const kostka = document.querySelector('.dice')
 const pootocKostkou = () => {
-	viditelneCislo = viditelneCislo + 1
-	if (viditelneCislo === 7) {
-		viditelneCislo = 1
-	}
-	kostka.src = `img/side${viditelneCislo}.svg`
+    viditelneCislo = viditelneCislo + 1
+    if (viditelneCislo === 7) {
+        viditelneCislo = 1
+    }
+    kostka.src = `img/side${viditelneCislo}.svg`
 }
 document.addEventListener('keydown', pootocKostkou)
 
 // ukol 3 - minutka v branchi "minutka"
+*/
+
+let ring = prompt("Zadej číslo")
+
+//setTimeout(time, 5000)
+//setTimeout(time, ring)
+
+let time = setTimeout(function () {
+    let css = document.querySelector('.alarm')
+    let zvuk = document.querySelector('#audio')
+    css.classList.add('alarm--ring')
+    zvuk.play()
+    console.log("Časový limit vypršel.")
+}, ring)
+
+let stop = document.querySelector('.button')
+stop.addEventListener("click", function () {
+    clearTimeout(time)
+    console.log("Odpočet byl zrušen.")
+});
+
