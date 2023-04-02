@@ -54,5 +54,4 @@ const pootocKostkou = () => {
 }
 document.addEventListener('keydown', pootocKostkou)
 
-// ukol 3
-
+// ukol 3 - minutka v branchi "minutka"

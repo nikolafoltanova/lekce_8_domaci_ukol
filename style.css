@@ -1,21 +1,49 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,400,700&display=swap');
+
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  display: flex;
+  background-color: #4ecdc4;
+}
+
+.container {
+  width: 30rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.alarm {
+  width: 30rem;
+  height: 30rem;
+  background-size: contain;
+  background-image: url('assets/alarm.svg');
+}
+
+@keyframes ring {
+  0% {
+    transform: rotateZ(0deg);
   }
-  
-  html {
-    font-family: sans-serif;
+  25% {
+    transform: rotateZ(5deg);
   }
-  
-  body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    
-    height: 100vh;
+  50% {
+    transform: rotateZ(0deg);
   }
-  
-  .dice {
-    width: 10rem;
-    height: 10rem;
+  75% {
+    transform: rotateZ(-5deg);
   }
+  100% {
+    transform: rotateZ(0deg);
+  }
+}
+
+.alarm--ring {
+  animation: ring 100ms 50;
+}
